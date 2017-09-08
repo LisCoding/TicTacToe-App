@@ -9,41 +9,63 @@
 import UIKit
 
 class ViewController: UIViewController {
-    let player1 = "Liseth"
-    let player2 = "Alex"
-    var currentPlayer = "Liseth"
+//    let player1 = "Liseth"
+//    let player2 = "Alex"
+//    var currentPlayer = "Liseth"
+    
+    @IBOutlet weak var winnerLabel: UILabel!
+    var game = Game()
+    
+    let player1Color = UIColor.blue
+    let player2Color = UIColor.red
+    let emptyColor = UIColor.lightGray
+    @IBOutlet var buttons: Array<UIButton>!
     
     @IBAction func displayButtonPressed(_ sender: UIButton) {
         
-        if currentPlayer == player1 {
-            sender.backgroundColor = UIColor.blue
+        guard let idx = self.buttons.index(of: sender) else {
+            return
+        }
+        let x = idx % 3
+        let y = idx / 3
+    
+        if game.currentPlayer == "blue" {
+            sender.backgroundColor = player1Color
+            sender.isEnabled = false
            
         } else {
         
-            sender.backgroundColor = UIColor.red
-            
+            sender.backgroundColor = player2Color
+            sender.isEnabled = false
         }
-    
-        if currentPlayer == player1 {
-            currentPlayer = player2
-        } else {
-            currentPlayer = player1
+        let winner = game.makeMove(x: x, y: y)
+        if winner != "no" {
+            winnerLabel.text = "Congratz \(winner) won!"
+
         }
+        
+     
     }
-    
-   
+
+
     
     @IBAction func resetButton(_ sender: UIButton) {
-        sender.backgroundColor = UIColor.lightGray
+        for (_, button) in self.buttons.enumerated() {
+            button.backgroundColor = emptyColor
+            button.isEnabled = true
+            winnerLabel.text = ""
+            game = Game()
+        }
         
-
     }
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+//        for (index, button) in self.buttons.enumerated() {
+//            button.setTitle(String(index), for: .normal)
+//        }
         // Do any additional setup after loading the view, typically from a nib.
     }
 

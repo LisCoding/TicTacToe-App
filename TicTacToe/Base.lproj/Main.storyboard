@@ -138,7 +138,7 @@
                                     <constraint firstAttribute="height" constant="400" id="OIb-c9-7e2"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Winner Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pE6-Q5-mBB">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pE6-Q5-mBB">
                                 <rect key="frame" x="23" y="503" width="343" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -165,6 +165,18 @@
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="winnerLabel" destination="pE6-Q5-mBB" id="Exm-TC-rru"/>
+                        <outletCollection property="buttons" destination="WKO-A8-Y4k" collectionClass="NSMutableArray" id="Ske-7C-e0I"/>
+                        <outletCollection property="buttons" destination="OLX-U0-Fvj" collectionClass="NSMutableArray" id="VRS-hd-0Jy"/>
+                        <outletCollection property="buttons" destination="HC6-sp-fsF" collectionClass="NSMutableArray" id="UKF-wP-J4x"/>
+                        <outletCollection property="buttons" destination="kfi-2a-Cfw" collectionClass="NSMutableArray" id="KLd-Qg-mz5"/>
+                        <outletCollection property="buttons" destination="1KD-WT-B6X" collectionClass="NSMutableArray" id="uAz-fI-FtE"/>
+                        <outletCollection property="buttons" destination="oAZ-Dl-c30" collectionClass="NSMutableArray" id="5uC-gj-8n2"/>
+                        <outletCollection property="buttons" destination="g1c-7x-zjX" collectionClass="NSMutableArray" id="CYc-KK-O3O"/>
+                        <outletCollection property="buttons" destination="X7q-Nf-czf" collectionClass="NSMutableArray" id="8qs-X9-cvn"/>
+                        <outletCollection property="buttons" destination="CWh-JV-Sfq" collectionClass="NSMutableArray" id="4Cm-Br-dln"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
