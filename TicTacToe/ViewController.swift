@@ -9,9 +9,41 @@
 import UIKit
 
 class ViewController: UIViewController {
+    let player1 = "Liseth"
+    let player2 = "Alex"
+    var currentPlayer = "Liseth"
+    
+    @IBAction func displayButtonPressed(_ sender: UIButton) {
+        
+        if currentPlayer == player1 {
+            sender.backgroundColor = UIColor.blue
+           
+        } else {
+        
+            sender.backgroundColor = UIColor.red
+            
+        }
+    
+        if currentPlayer == player1 {
+            currentPlayer = player2
+        } else {
+            currentPlayer = player1
+        }
+    }
+    
+   
+    
+    @IBAction func resetButton(_ sender: UIButton) {
+        sender.backgroundColor = UIColor.lightGray
+        
 
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
